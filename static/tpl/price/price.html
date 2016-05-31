@@ -1,0 +1,69 @@
+<div class="main-cont layout" ng-controller="TradeNewsController">
+    <p class="bread">
+        <span>首页</span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<span>行情中心</span>
+    </p>
+
+    <div class="date-box">
+        <div class="date-input" ng-controller="DateController">
+            <span class="input-box"><input type="text" current-text="今天" clear-text="清除" close-text="关闭"
+                                           max-date="startMaxDate" datepicker-popup="{{format}}" class="Wdate input-txt"
+                                           ng-change="dateChange()" ng-model="$parent.startdate" is-open="opened1"
+                                           ng-click="open1($event)"/></span>
+            <span class="input-box"><input type="text" current-text="今天" clear-text="清除" close-text="关闭"
+                                           min-date="endMinDate" max-date="endMaxDate" datepicker-popup="{{format}}"
+                                           class="Wdate input-txt" ng-change="dateChange()" ng-model="$parent.enddate"
+                                           is-open="opened2" ng-click="open2($event)"/></span>
+        </div>
+        <div class="search-title">
+            <span class="fn-left">搜标题:</span>
+
+            <p class="fn-left">
+                <input type="text" class="input-txt" ng-model="keyword"/>
+                <button class="h-btn-area" ng-click="search()"></button>
+            </p>
+        </div>
+    </div>
+    <div class="main-l fn-left">
+        <div class="block">
+            <div class="line"><h3>塑料报价</h3><a href="" ui-sref="pricemore({quotesType:0,from:0,to:0,key:0})" class="more-link">更多>></a></div>
+            <div class="block-detail">
+                <div class="img-box">
+                    <img src="{{list_sl.img}}" alt=""/>
+                </div>
+                <ul class="list-li">
+                    <li ng-repeat="li in list_sl track by $index" ui-sref="priceinfo({id:li.id})"><a href=""><span>{{li.title}}</span><span
+                            class="pub-date">{{li.createTime | date: 'yyyy.MM.dd'}}</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="block">
+            <div class="line"><h3>橡胶报价</h3><a href="" ui-sref="pricemore({quotesType:2,from:0,to:0,key:0})" class="more-link">更多>></a></div>
+            <div class="block-detail">
+                <div class="img-box">
+                    <img src="{{list_xj.img}}" alt=""/>
+                </div>
+                <ul class="list-li">
+                    <li ng-repeat="li in list_xj track by $index" ui-sref="priceinfo({id:li.id})"><a href=""><span>{{li.title}}</span><span
+                            class="pub-date">{{li.createTime | date:'yyyy.MM.dd'}}</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="block">
+            <div class="line"><h3>有机化工报价</h3><a href="" ui-sref="pricemore({quotesType:3,from:0,to:0,key:0})" class="more-link">更多>></a>
+            </div>
+            <div class="block-detail">
+                <div class="img-box">
+                    <img src="{{list_yjhg.img}}" alt=""/>
+                </div>
+                <ul class="list-li">
+                    <li ng-repeat="li in list_yjhg track by $index" ui-sref="priceinfo({id:li.id})"><a href=""><span>{{li.title}}</span><span
+                            class="pub-date">{{li.createTime | date:'yyyy.MM.dd'}}</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-r fn-right">
+        <price-publish></price-publish>
+    </div>
+
+</div>

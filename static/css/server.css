@@ -1,0 +1,225 @@
+body{
+	font-family: "microsoft yahei";
+}
+.server-box{
+	width: 100%;
+	max-width: 1920px;
+	position: relative;
+	margin: 0 auto;
+	padding-top: 100px;
+	padding-bottom: 142px;
+	background: url(../img/server-bg01.jpg) no-repeat center top;
+}
+.server-box .nav{
+	width: 380px;
+	position: absolute;
+	top: 24px;
+	right: 410px;
+	color: #fff;
+	font-size: 18px;
+}
+.server-box .nav a{
+	color: #fff;
+	cursor: pointer;
+}
+.server-box .nav i{
+	display: inline-block;
+	vertical-align: middle;
+	width: 10px;
+	height: 18px;
+	margin: -2px 20px 0 20px;
+	background: url(../img/icon-server.png) no-repeat;
+}
+.server-box h2{
+	text-align: center;
+	color: #fff;
+	font-size: 60px;
+	margin-bottom: 70px;
+}
+.server-title{
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	line-height: 30px;
+}
+.server-title span{
+	font-size: 18px;
+}
+.server-title hr{
+	display: block;
+	height: 2px;
+	width: 60px;
+	background: #fff;
+	margin: 24px auto 0 auto;
+}
+.server-box .content{
+	overflow: hidden;
+	width: 1190px;
+	margin: 78px auto 0 auto;
+}
+.server-box .content ul{
+	float: left;
+	width: 370px;
+	color: #fff;
+}
+.server-box .content ul.m70{
+	margin: 0 10px 0 70px;
+}
+.server-box .content li{
+	font-size: 16px;
+	line-height: 28px;
+}
+.server-box .content li.tit{
+	font-size: 24px;
+}
+.server-box .content li.con{
+	margin: 10px 0;
+	height: 54px;
+}
+.server-box .arr{
+	display: block;
+	position: absolute;
+	width: 14px;
+	height: 20px;
+	bottom: 45px;
+	left: 50%;
+	margin-left: -7px;
+	background: url(../img/icon-server.png) no-repeat -19px 0;
+	z-index: 999;
+	cursor: pointer;
+}
+.support-value{
+	position: relative;
+	width: 100%;
+	padding: 86px 0 124px 0;
+	background: url(../img/server-bg02.jpg) no-repeat center bottom #f5f5f5;
+}
+.support-value h2{
+	color: #cdcdcd;
+	font-size: 55px;
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 56px;
+}
+.support-value .server-title{
+	color: #2668e6;
+}
+.support-value .server-title hr{
+	background: #2668e6;
+}
+.support-value .content{
+	background: #FFF;
+	width: 1200px;
+	margin: 70px auto 0 auto;
+	overflow: hidden;
+}
+.support-value .content ul{
+	float: left;
+	width: 399px;
+	height: 652px;
+	padding-top: 68px;
+}
+.support-value .content ul.b1{
+	border-left: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+}
+.support-value .content li.num{
+	height: 64px;
+	margin-bottom: 30px;
+}
+.support-value .content li.num1{
+	background: url(../img/icon-server.png) no-repeat center -30px;
+}
+.support-value .content li.num2{
+	background: url(../img/icon-server.png) no-repeat center -104px;
+}
+.support-value .content li.num3{
+	background: url(../img/icon-server.png) no-repeat center -178px;
+}
+.support-value .content li.e-name{
+	color: #535353;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 16px;
+}
+.support-value .content li.c-name{
+	color: #2668e6;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 28px;
+}
+.support-value .content li.pic img{
+	display: block;
+	width: 294px;
+	margin: 0 auto;
+}
+.support-value .content li.txt{
+	color: #535353;
+	font-size: 14px;
+	text-align: justify;
+	line-height: 28px;
+	margin-top: 20px;
+	padding: 0 52px;
+}
+.support-value .arr{
+	display: block;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	background: url(../img/arr.png) no-repeat center #f2a500;
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	bottom: -35px;
+	left: 50%;
+	margin-left: -35px;
+	z-index: 999;
+	cursor: pointer;
+}
+.finance{
+	background: #fff;
+	padding: 90px 0 82px 0;
+}
+.finance p.con{
+	text-align: center;
+	color: #353842;
+	margin: 28px 0 52px 0;
+	font-size: 18px;
+}
+.finance h3{
+	text-align: center;
+	color: #2862d0;
+	font-size: 24px;
+}
+.finance img{
+	display: block;
+	width: 1200px;
+	margin: 18px auto 52px auto;
+}
+.finance i.arr-back{
+	display: block;
+	width: 70px;
+	margin: 0 auto;
+	text-align: center;
+	color: #535353;
+	font-size: 14px;
+	cursor: pointer;
+}
+.finance i.arr-back em{
+	display: block;
+	width: 70px;
+	height: 70px;
+	background: url(../img/arr2.png) no-repeat center;
+	margin-bottom: 15px;
+}
+.server-footer{
+	text-align: center;
+	color: #878a9d;
+	font-size: 14px;
+	width: 100%;
+	background: #0f192a;
+	padding: 36px 0 34px 0;
+}
+.server-footer a{
+	color: #878a9d;
+}

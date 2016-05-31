@@ -1,0 +1,92 @@
+<div class="record-box market-box last-box layout" ng-controller="TrendsCtrl">
+    <h2>市场动态</h2>
+    <div class="trade-tab">
+        <div class="market-block">
+            <div class="device">
+                <carousel interval="myInterval">
+                    <slide ng-repeat="slide in slides" active="slide.active">
+                        <a href="" target="_blank">
+                            <img class="img-floor" ng-src="{{imageViewPath + slide[0].imageUrl}}" style="margin:auto;" width="394" height="254" />
+                        </a>
+                        <div class="news-li">
+                            <h5><a href="/entry/state_list.html?id={{slide[0].id}}" target="_blank" title="{{slide[0].title}}">{{slide[0].title}}</a></h5>
+                            <ul class="list">
+                                <li ng-repeat="focus in slide track by $index" ng-if="$index != 0 && $index < 3">
+                                    <a href="/entry/state_list.html?id={{focus.id}}" title="{{focus.title}}">{{focus.title}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </slide>
+                </carousel>
+            </div>
+        </div>
+        <div class="market-block">
+            <div class="block">
+                <h6>塑料行情</h6>
+                <div class="news-box">
+                    <div class="news-left">
+                        <img ng-src="{{imageViewPath + newsLeftAdver[0].imageUrl}}" title="{{newsLeftAdver[0].title}}" alt="{{newsLeftAdver[0].title}}"/>
+                    </div>
+                    <div class="news-li">
+                        <h5><a href="/news/{{slhq[0].id}}" target="_blank" title="{{slhq[0].title}}">{{slhq[0].title}}</a></h5>
+                        <ul class="list">
+                            <li ng-repeat="news in slhq track by $index" ng-if="$index != 0 && $index < 4">
+                                <a href="/entry/state_list.html?id={{focus.id}}" title="{{news.title}}">{{news.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <h6>液化行情</h6>
+                <div class="news-box">
+                    <div class="news-left">
+                        <img ng-src="{{imageViewPath + newsLeftAdver[2].imageUrl}}" title="{{newsLeftAdver[1].title}}" alt="{{newsLeftAdver[1].title}}"/>
+                    </div>
+                    <div class="news-li">
+                        <h5><a href="/news/{{yhhq[0].id}}" target="_blank" title="{{yhhq[0].title}}">{{yhhq[0].title}}</a></h5>
+                        <ul class="list">
+                            <li ng-repeat="news in yhhq track by $index" ng-if="$index != 0 && $index < 4">
+                                <a href="/entry/state_list.html?id={{focus.id}}" title="{{news.title}}">{{news.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="market-block">
+            <div class="block">
+                <h6>橡胶行情</h6>
+                <div class="news-box">
+                    <div class="news-left">
+                        <img ng-src="{{imageViewPath + newsLeftAdver[1].imageUrl}}" title="{{newsLeftAdver[2].title}}" alt="{{newsLeftAdver[2].title}}"/>
+                    </div>
+                    <div class="news-li">
+                        <h5><a href="/entry/state_list.html?id=/{{xjhq[0].id}}" target="_blank" title="{{xjhq[0].title}}">{{xjhq[0].title}}</a></h5>
+                        <ul class="list">
+                            <li ng-repeat="news in xjhq track by $index" ng-if="$index != 0 && $index < 4">
+                                <a href="/entry/state_list.html?id={{news.id}}" title="{{news.title}}">{{news.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <h6>装置动态</h6>
+                <div class="news-box">
+                    <div class="news-left">
+                        <img ng-src="{{imageViewPath + newsLeftAdver[3].imageUrl}}" title="{{newsLeftAdver[3].title}}" alt="{{newsLeftAdver[3].title}}"/>
+                    </div>
+                    <div class="news-li">
+                        <h5><a href="/entry/state_list.html?id={{dtzz[0].id}}" target="_blank" title="{{dtzz[0].title}}">{{dtzz[0].title}}</a></h5>
+                        <ul class="list">
+                            <li ng-repeat="news in dtzz track by $index" ng-if="$index != 0 && $index < 4">
+                                <a href="/entry/state_list.html?id={{news.id}}" title="{{news.title}}">{{news.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="main-cont layout" ng-controller="ImgNewsController">
+    <p class="bread">
+        <span>首页</span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<span>市场动态</span>
+    </p>
+
+    <div class="date-box">
+        <div class="date-input" ng-controller="DateController">
+            <span class="input-box"><input type="text" current-text="今天" clear-text="清除" close-text="关闭"
+                                           max-date="startMaxDate" datepicker-popup="{{format}}" class="Wdate input-txt"
+                                           ng-change="dateChange()" ng-model="$parent.startdate" is-open="opened1"
+                                           ng-click="open1($event)"/></span>
+            <span class="input-box"><input type="text" current-text="今天" clear-text="清除" close-text="关闭"
+                                           min-date="endMinDate" max-date="endMaxDate" datepicker-popup="{{format}}"
+                                           class="Wdate input-txt" ng-change="dateChange()" ng-model="$parent.enddate"
+                                           is-open="opened2" ng-click="open2($event)"/></span>
+        </div>
+        <div class="search-title">
+            <span class="fn-left">搜标题:</span>
+
+            <p class="fn-left">
+                <input type="text" class="input-txt" ng-model="keyword"/>
+                <button class="h-btn-area" ng-click="search()"></button>
+            </p>
+        </div>
+    </div>
+    <div class="main-l fn-left">
+        <div class="block">
+            <div class="line"><h3>市场动态</h3></div>
+            <div class="block-detail" ng-repeat='item in imgnewsitems'>
+                <div class="img-box">
+                    <img src="{{imageViewPath}}{{item.imageUrl}}" alt=""/>
+                </div>
+                <div class="detail-txt">
+                    <h3><a href="" ui-sref="marketinfo({id:item.id})">{{item.title}}</a></h3>
+                    <h6><p>{{item.keywords}}</p><span>{{item.createTime | date:'shortDate'}}</span></h6>
+                    <p>{{item.introductio}}</p>
+                </div>
+            </div>
+        </div>
+        <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" previous-text="&lt;"
+                    next-text="&gt;">
+        </pagination>
+        <p class="count-num fn-right">共查询到<span>{{totalItems}}</span>条记录</p>
+    </div>
+    <div class="main-r fn-right">
+        <div class="block" ng-controller="SideNewsController">
+            <div class="line"><h3>装置动态</h3></div>
+            <div class="block-detail">
+                <div ng-class="{'article-li':true, 'even-line': $index % 2 != 0}" ng-repeat="item in sidenewsitems">
+                    <h3><a href="/entry/state_list.html?id={{item.id}}">{{item.title}}</a></h3>
+
+                    <p>{{item.createTime | date:'shortDate'}} 标签：{{item.keywords}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

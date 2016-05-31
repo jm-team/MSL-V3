@@ -1,0 +1,33 @@
+<div class="header fn-hide" ng-cloak="" ui-scroll-fixed="" page="pageName" ng-hide="isShow">
+    <div class="nav layout">
+        <a href="/" class="nav-logo">
+            <img src="/dist/img/msl_logo.jpg" alt=""/>
+        </a>
+        <form name="searchForm" class="search-box" ng-controller="SearchBoxCtrl" ng-submit="submit()"
+              action="/FrontSearch.do?action=s" method="post">
+            <div class="search-area">
+                <div class="search-type-wrap" ng-mouseover="isMouseover = true" ng-mouseout="isMouseover = fasle">
+                    <span class="up"></span>
+
+                    <p class="selectInner">{{searchTypeName}}</p>
+                    <ul class="search-type" ng-show="isMouseover">
+                        <li ng-repeat="type in typeList track by $index" ng-click="selectType($index)"
+                            ng-hide="searchTypeName == type.name">{{type.name}}
+                        </li>
+                    </ul>
+                </div>
+                <input type="text" ng-model="searchText" name="searchName" class="input-search"
+                       placeholder="搜索商城，输入如品种、牌号、厂家"/>
+                <input type="hidden" value="{{searchType}}" name="searchBarType"/>
+            </div>
+            <input type="submit" value="" class="search-btn"/>
+        </form>
+        <ul class="nav-link">
+            <li ui-sref="main"><a href="" target="_self">首页</a></li>
+            <li ui-sref="match({goodtype:0,slgoodtype:0,xjgoodtype:0,yjgoodtype:0,site:''})"><a href="" target="_self">撮合市场</a></li>
+            <li><a href="/product/selfSell.shtml" target="_self">自营商城</a></li>
+            <li ui-sref="price"><a href="" target="_self">行情中心</a></li>
+            <li ui-sref="market"><a href="" target="_self">市场动态</a></li>
+        </ul>
+    </div>
+</div>

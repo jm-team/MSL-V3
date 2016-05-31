@@ -1,0 +1,286 @@
+<div class="main-cont layout" ng-controller="DataList">
+    <p class="bread"><span>首页</span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<span>撮合市场</span></p>
+    <div class="goods-tab">
+        <ul class="goods-tab-nav">
+            <li ng-repeat="type in typeList track by $index" ng-click="goodTypes($index)" ng-class="{active:type.value == goodType}" check-active="active">{{type.name}}</li>
+        </ul>
+        <div class="choose-if">
+            <div class="if-box">
+                <div class="if-line"><span class="fn-left">塑料:</span>
+                    <p class="fn-left">
+                        <a href="javascript:void(0);" toggle-class="active" ng-click="slgoodTypes('null')" ng-class="{active:0 == slgoodType}">全部</a>
+                        <a ng-repeat="list in lists_sl track by $index" href="javascript:void(0);" toggle-class="active" ng-click="slgoodTypes($index)" ng-class="{active:list.columnValueEnum == slgoodType}">{{list.tableKeydesc}}</a>
+                    </p>
+                </div>
+                <div class="if-line"><span class="fn-left">橡胶:</span>
+                    <p class="fn-left">
+                        <a href="javascript:void(0);" toggle-class="active" ng-click="xjgoodTypes('null')" ng-class="{active:0 == xjgoodType}">全部</a>
+                        <a ng-repeat="list in lists_xj track by $index" href="javascript:void(0);" toggle-class="active" ng-click="xjgoodTypes($index)" ng-class="{active:list.columnValueEnum == xjgoodType}">{{list.tableKeydesc}}</a>
+                    </p>
+                </div>
+                <div class="if-line"><span class="fn-left">有机化工:</span>
+                    <p class="fn-left">
+                        <a href="javascript:void(0);" toggle-class="active" ng-click="yjgoodTypes('null')" ng-class="{active:0 == yjgoodType}">全部</a>
+                        <a ng-repeat="list in lists_hg track by $index" href="javascript:void(0);" toggle-class="active" ng-click="yjgoodTypes($index)" ng-class="{active:list.columnValueEnum == yjgoodType}">{{list.tableKeydesc}}</a>
+                    </p>
+                </div>
+                <div class="if-line search-area"><span class="fn-left">搜地区:</span>
+                    <p class="fn-left">
+                        <input type="text" id="site" class="input-txt" ng-model="site"/>
+                        <button class="btn-area" ng-click="search()"></button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <price-publish></price-publish>
+    <div style="clear: both;"></div>
+    <!--塑料-->
+    <div class="list-block">
+        <h3><span>1F 塑料</span></h3>
+        <div class="resource-box">
+            <div class="source-l" ng-controller="DataList_sll">
+                <div class="source-title">
+                    <h6 class="fn-left">供应资源<span></span></h6>
+
+                    <div class="page-box fn-right">
+                        <a ng-click="Previous()">&lt;</a><a ng-repeat="page in pageList"
+                                                            ng-class="{active: isActivePage(page)}"
+                                                            ng-click="selectPage(page)">{{ page }}</a><a
+                            ng-click="Next()">&gt;</a>
+                    </div>
+                </div>
+                <div class="table-box">
+                    <div class="table-ul" ng-repeat="box in boxs">
+                        <ul class="th">
+                            <li>{{box.cateName}}</li>
+                            <li>{{box.goodsName}}</li>
+                            <li>{{box.factory}}</li>
+                            <li class="time-li">{{box.createTime | date:'shortDate'}}</li>
+                        </ul>
+                        <ul class="list-ul">
+                            <li>
+                                <p>库存：<span>{{box.billAmountSum}}吨</span></p>
+
+                                <p>交货时间：<span>{{box.deliveryDays | date:'shortDate'}}</span></p>
+                            </li>
+                            <li>
+                                <p>交货方式：<span type-name="{{box.deliveryBy}}"></span></p>
+
+                                <p>付款时间：<span>{{box.payDaysName}}天内</span></p>
+                            </li>
+                        </ul>
+                        <ul class="supply-ul">
+                            <li>供应商：<span>{{box.companyName}}</span></li>
+                            <li><em>{{box.tradeRealName}}</em><em>{{box.qq}}</em><em class="tel-num">{{box.linkmobileNo}}</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="source-r" ng-controller="DataList_slr">
+                <div class="source-title">
+                    <h6 class="fn-left">供应资源<span></span></h6>
+
+                    <div class="page-box fn-right"><a ng-click="Previous()">&lt;</a><a ng-repeat="page in pageList"
+                                                                                       ng-class="{active: isActivePage(page)}"
+                                                                                       ng-click="selectPage(page)">{{
+                        page }}</a><a ng-click="Next()">&gt;</a></div>
+                </div>
+                <div class="table-box">
+                    <div class="table-ul" ng-repeat="box in boxs">
+                        <ul class="th">
+                            <li>{{box.cateName}}</li>
+                            <li>{{box.goodsName}}</li>
+                            <li>{{box.factory}}</li>
+                            <li class="time-li">{{box.createTime | date:'shortDate'}}</li>
+                        </ul>
+                        <ul class="list-ul">
+                            <li>
+                                <p>库存：<span>{{box.billAmountSun}}吨</span></p>
+
+                                <p>交货时间：<span>{{box.boxJhsj}}</span></p>
+                            </li>
+                            <li>
+                                <p>交货方式：<span>{{box.deliveryBy}}</span></p>
+
+                                <p>付款时间：<span>{{box.payDaysName}}天内</span></p>
+                            </li>
+                        </ul>
+                        <ul class="supply-ul">
+                            <li>供应商：<span>{{box.companyName}}</span></li>
+                            <li><em>{{box.tradeRealName}}</em><em>{{box.qq}}</em><em class="tel-num">{{box.linkmobileNo}}</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--橡胶-->
+    <div class="list-block">
+        <h3><span>2F 橡胶</span></h3>
+
+        <div class="resource-box">
+            <div class="source-l" ng-controller="DataList_xjl">
+                <div class="source-title">
+                    <h6 class="fn-left">供应资源<span></span></h6>
+
+                    <div class="page-box fn-right">
+                        <a ng-click="Previous()">&lt;</a><a ng-repeat="page in pageList"
+                                                            ng-class="{active: isActivePage(page)}"
+                                                            ng-click="selectPage(page)">{{ page }}</a><a
+                            ng-click="Next()">&gt;</a>
+                    </div>
+                </div>
+                <div class="table-box">
+                    <div class="table-ul" ng-repeat="box in boxs">
+                        <ul class="th">
+                            <li>{{box.cateName}}</li>
+                            <li>{{box.goodsName}}</li>
+                            <li>{{box.factory}}</li>
+                            <li class="time-li">{{box.createTime | date:'shortDate'}}</li>
+                        </ul>
+                        <ul class="list-ul">
+                            <li>
+                                <p>库存：<span>{{box.billAmountSun}}吨</span></p>
+
+                                <p>交货时间：<span>{{box.boxJhsj}}</span></p>
+                            </li>
+                            <li>
+                                <p>交货方式：<span>{{box.deliveryBy}}</span></p>
+
+                                <p>付款时间：<span>{{box.payDaysName}}天内</span></p>
+                            </li>
+                        </ul>
+                        <ul class="supply-ul">
+                            <li>供应商：<span>{{box.companyName}}</span></li>
+                            <li><em>{{box.tradeRealName}}</em><em>{{box.qq}}</em><em class="tel-num">{{box.linkmobileNo}}</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="source-r" ng-controller="DataList_xjr">
+                <div class="source-title">
+                    <h6 class="fn-left">供应资源<span></span></h6>
+
+                    <div class="page-box fn-right"><a ng-click="Previous()">&lt;</a><a ng-repeat="page in pageList"
+                                                                                       ng-class="{active: isActivePage(page)}"
+                                                                                       ng-click="selectPage(page)">{{
+                        page }}</a><a ng-click="Next()">&gt;</a></div>
+                </div>
+                <div class="table-box">
+                    <div class="table-ul" ng-repeat="box in boxs">
+                        <ul class="th">
+                            <li>{{box.cateName}}</li>
+                            <li>{{box.goodsName}}</li>
+                            <li>{{box.factory}}</li>
+                            <li class="time-li">{{box.createTime | date:'shortDate'}}</li>
+                        </ul>
+                        <ul class="list-ul">
+                            <li>
+                                <p>库存：<span>{{box.billAmountSun}}吨</span></p>
+
+                                <p>交货时间：<span>{{box.boxJhsj}}</span></p>
+                            </li>
+                            <li>
+                                <p>交货方式：<span>{{box.deliveryBy}}</span></p>
+
+                                <p>付款时间：<span>{{box.payDaysName}}天内</span></p>
+                            </li>
+                        </ul>
+                        <ul class="supply-ul">
+                            <li>供应商：<span>{{box.companyName}}</span></li>
+                            <li><em>{{box.tradeRealName}}</em><em>{{box.qq}}</em><em class="tel-num">{{box.linkmobileNo}}</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--有机化工-->
+    <div class="list-block">
+        <h3><span>3F 有机化工</span></h3>
+
+        <div class="resource-box">
+            <div class="source-l" ng-controller="DataList_yjl">
+                <div class="source-title">
+                    <h6 class="fn-left">供应资源<span></span></h6>
+
+                    <div class="page-box fn-right">
+                        <a ng-click="Previous()">&lt;</a><a ng-repeat="page in pageList"
+                                                            ng-class="{active: isActivePage(page)}"
+                                                            ng-click="selectPage(page)">{{ page }}</a><a
+                            ng-click="Next()">&gt;</a>
+                    </div>
+                </div>
+                <div class="table-box">
+                    <div class="table-ul" ng-repeat="box in boxs">
+                        <ul class="th">
+                            <li>{{box.cateName}}</li>
+                            <li>{{box.goodsName}}</li>
+                            <li>{{box.factory}}</li>
+                            <li class="time-li">{{box.createTime | date:'shortDate'}}</li>
+                        </ul>
+                        <ul class="list-ul">
+                            <li>
+                                <p>库存：<span>{{box.billAmountSun}}吨</span></p>
+
+                                <p>交货时间：<span>{{box.boxJhsj}}</span></p>
+                            </li>
+                            <li>
+                                <p>交货方式：<span>{{box.deliveryBy}}</span></p>
+
+                                <p>付款时间：<span>{{box.payDaysName}}天内</span></p>
+                            </li>
+                        </ul>
+                        <ul class="supply-ul">
+                            <li>供应商：<span>{{box.companyName}}</span></li>
+                            <li><em>{{box.tradeRealName}}</em><em>{{box.qq}}</em><em class="tel-num">{{box.linkmobileNo}}</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="source-r" ng-controller="DataList_yjr">
+                <div class="source-title">
+                    <h6 class="fn-left">供应资源<span></span></h6>
+
+                    <div class="page-box fn-right"><a ng-click="Previous()">&lt;</a><a ng-repeat="page in pageList"
+                                                                                       ng-class="{active: isActivePage(page)}"
+                                                                                       ng-click="selectPage(page)">{{
+                        page }}</a><a ng-click="Next()">&gt;</a></div>
+                </div>
+                <div class="table-box">
+                    <div class="table-ul" ng-repeat="box in boxs">
+                        <ul class="th">
+                            <li>{{box.cateName}}</li>
+                            <li>{{box.goodsName}}</li>
+                            <li>{{box.factory}}</li>
+                            <li class="time-li">{{box.createTime | date:'shortDate'}}</li>
+                        </ul>
+                        <ul class="list-ul">
+                            <li>
+                                <p>库存：<span>{{box.billAmountSun}}吨</span></p>
+
+                                <p>交货时间：<span>{{box.boxJhsj}}</span></p>
+                            </li>
+                            <li>
+                                <p>交货方式：<span>{{box.deliveryBy}}</span></p>
+
+                                <p>付款时间：<span>{{box.payDaysName}}天内</span></p>
+                            </li>
+                        </ul>
+                        <ul class="supply-ul">
+                            <li>供应商：<span>{{box.companyName}}</span></li>
+                            <li><em>{{box.tradeRealName}}</em><em>{{box.qq}}</em><em class="tel-num">{{box.linkmobileNo}}</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

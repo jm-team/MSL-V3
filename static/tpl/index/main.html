@@ -1,0 +1,257 @@
+<!-- 首页导航 -->
+<div class="header J_header">
+    <div class="nav layout">
+        <a href="/" class="nav-logo">
+            <img src="/dist/img/msl_logo.jpg" alt="聚贸化工 卖塑郎"/>
+        </a>
+        <ul class="nav-link">
+            <li ui-sref="main"><a href="" target="_self">首页</a></li>
+            <li ui-sref="match({goodtype:0,slgoodtype:0,xjgoodtype:0,yjgoodtype:0,site:''})"><a href="" target="_self">撮合市场</a></li>
+            <li><a href="/product/selfSell.shtml" target="_self">自营商城</a></li>
+            <li ui-sref="price"><a href="" target="_self">行情中心</a></li>
+            <li ui-sref="market"><a href="" target="_self">市场动态</a></li>
+        </ul>
+    </div>
+</div>
+<!--banner-->
+<div class="banner">
+    <div class="banner-box" ng-controller="CarouselBannerCtrl">
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <a href="{{slide.articlsUrl}}" target="_blank">
+                    <img class="banner-img" ng-src="{{webImageViewPath + slide.imageUrl}}" width="1920" height="414" />
+                </a>
+            </slide>
+        </carousel>
+    </div>
+    <div class="text-box layout">
+        <div class="text-l">
+            <h2>特色服务</h2>
+            <ul class="service-list">
+                <li>
+                    <h3>平台交易服务</h3>
+                    <p><span class="sun-li">代理采购</span><span class="sun-li">代开证服务</span><span class="sun-li">撮合服务</span></p>
+                </li>
+                <li>
+                    <h3>保价服务 </h3>
+                    <p><span class="sun-li">服务内容</span><span class="sun-li sel">服务项目</span><span class="sun-li">服务流程</span></p>
+                </li>
+                <li>
+                    <h3>供应链金融 </h3>
+                    <p><span class="sun-li">服务内容</span><span class="sun-li">服务流程</span></p>
+                </li>
+            </ul>
+            <div class="h-btn-box">
+                <a href="tencent://message/?Menu=yes&amp;uin=938000730&amp;Service=58&amp;SigT=A7F6FEA02730C988FEE36DB64F785F3A54C7C09A17F3F5F7F5A0D99D31F40D9470345FCF0E8C3A82BE32D44DF0756F079DDD0E554461C89C35D952A64FD713E24C341194F8B7D9E0DA528CA2A6D855D640179D195E5B9158E19EA3A4B68F26539B3EE2CA9A0444109DE7D667D88A9137C84C533DCD79A0E6&amp;SigU=30E5D5233A443AB2451ABEFE35747B57210310B417786713F5F3140EF7C78F43BD4E8F59C00B559B52820290ADA979F49F46E524A229094BDEC889066DC050730608F3CC795C154D" class="h-btn h-btn-white">联系更多专员</a>
+                <a href="" ui-sref="service" class="h-btn h-btn-white h-btn-small">更多详情</a>
+            </div>
+        </div>
+        <index-login></index-login>
+    </div>
+</div>
+<!--化工分类-->
+<div class="kind-box layout">
+    <div class="kind-tab">
+        <tabset type="pills">
+            <tab>
+                <tab-heading>
+                    塑料<span></span>
+                </tab-heading>
+                <div class="content">
+                    <div class="cont-list bg-left">
+                        <h3>聚乙烯<span>PE</span></h3>
+                        <div class="brand-num">
+                            <div class="num-box">
+                                <h3>热门牌号</h3>
+                                <p><span ng-repeat="item in goodsHotList13 track by $index" ng-if="$index < 10">{{item.goodsName}}</span></p>
+                            </div>
+                            <div class="h-btn-box">
+                                <a href="/#/match/0/{{goodsHotList13[0].cateId}}/0/0/" class="h-btn">立即查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont-list bg-right">
+                        <h3>聚丙烯<span>PP</span></h3>
+                        <div class="brand-num">
+                            <div class="num-box">
+                                <h3>热门牌号</h3>
+                                <p><span ng-repeat="item in goodsHotList21 track by $index" ng-if="$index < 10">{{item.goodsName}}</span></p>
+                            </div>
+                            <div class="h-btn-box">
+                                <a href="/#/match/0/{{goodsHotList21[0].cateId}}/0/0/" class="h-btn">立即查看</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <tab>
+                <tab-heading>
+                    橡胶<span></span>
+                </tab-heading>
+                <div class="content">
+                    <div class="cont-list bg-left">
+                        <h3>天然橡胶<span></span></h3>
+                        <div class="brand-num">
+                            <div class="num-box">
+                                <h3>热门牌号</h3>
+                                <p><span ng-repeat="item in goodsHotList15 track by $index" ng-if="$index < 10">{{item.goodsName}}</span></p>
+                            </div>
+                            <div class="h-btn-box">
+                                <a href="/#/match/0/0/{{goodsHotList15[0].cateId}}/0/" class="h-btn">立即查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont-list bg-right">
+                        <h3>合成橡胶<span></span></h3>
+                        <div class="brand-num">
+                            <div class="num-box">
+                                <h3>热门牌号</h3>
+                                <p><span ng-repeat="item in goodsHotList17 track by $index" ng-if="$index < 10">{{item.goodsName}}</span></p>
+                            </div>
+                            <div class="h-btn-box">
+                                <a href="/#/match/0/0/{{goodsHotList17[0].cateId}}/0/" class="h-btn">立即查看</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <tab>
+                <tab-heading>
+                    有机化工<span></span>
+                </tab-heading>
+                <div class="content">
+                    <div class="cont-list bg-left">
+                        <h3>烯烃<span></span></h3>
+                        <div class="brand-num">
+                            <div class="num-box">
+                                <h3>热门牌号</h3>
+                                <p><span ng-repeat="item in goodsHotList11 track by $index" ng-if="$index < 10">{{item.goodsName}}</span></p>
+                            </div>
+                            <div class="h-btn-box">
+                                <a href="/#/match/0/0/0/{{goodsHotList11[0].cateId}}/" class="h-btn">立即查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont-list bg-right">
+                        <h3>芳烃<span></span></h3>
+                        <div class="brand-num">
+                            <div class="num-box">
+                                <h3>热门牌号</h3>
+                                <p><span ng-repeat="item in goodsHotList19 track by $index" ng-if="$index < 10">{{item.goodsName}}</span></p>
+                            </div>
+                            <div class="h-btn-box">
+                                <a href="/#/match/0/0/0/{{goodsHotList19[0].cateId}}/" class="h-btn">立即查看</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+    <form name="searchForm" class="search-box" ng-controller="SearchBoxCtrl" action="{{searchUrl}}" method="post">
+        <div class="search-area">
+            <div class="search-type-wrap" ng-mouseover="isMouseover = true" ng-mouseout="isMouseover = fasle">
+                <span class="up"></span>
+                <p class="selectInner">{{searchTypeName}}</p>
+                <ul class="search-type" ng-show="isMouseover">
+                    <li ng-repeat="type in typeList track by $index" ng-click="selectType($index)" ng-hide="searchTypeName == type.name">{{type.name}}</li>
+                </ul>
+            </div>
+            <input type="text" ng-model="searchText" name="searchName" class="input-search" placeholder="搜索商城，输入如品种、牌号、厂家"/>
+            <input type="hidden" value="{{searchType}}" name="searchBarType"/>
+        </div>
+        <input type="button" ng-click="indexSearch()" class="search-btn"/>
+    </form>
+</div>
+<!--撮合市场-->
+<div class="record-box trade-box layout">
+    <h2>撮合市场</h2>
+    <div class="trade-tab list-box J_tabBox">
+        <div class="focus fn-left">
+            <h3>今日焦点</h3>
+            <div class="focus-l" ng-repeat="entry in marketList track by $index" ng-if="$index < 5">
+                <p>{{entry.title}}</p>
+                <span>{{entry.lastNewPrice}}</span>
+                <span>{{entry.fluctuations}}</span>
+                <span class="point {{entry.tendency == 0  ?  'point-up' : entry.tendency == 1 ? 'point-down' : 'point-line'}}"></span>
+            </div>
+        </div>
+        <input type="hidden" value="0" ng-model="tabType">
+        <ul class="tab-nav J_tabNav">
+            <li ng-class="{'active': marketActiveCategory == $index}" ng-repeat="category in marketCategories track by $index" ng-click="marketChangeCategory($index)">{{category.name}} <span></span></li>
+        </ul>
+        <div class="J_tabCont">
+            <div>
+                <table class="tab-table">
+                    <tr class="th">
+                        <th>品种</th>
+                        <th>牌号</th>
+                        <th>厂家</th>
+                        <th>价格</th>
+                        <th>数量（吨）</th>
+                        <th>仓库</th>
+                        <th>发布时间</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr ng-repeat="sell in marketListResult track by $index" ng-class-odd="'odd-line'" ng-if="$index < 8">
+                        <td>{{sell.cateName}}</td>
+                        <td>{{sell.goodsName}}</td>
+                        <td>{{sell.factory}}</td>
+                        <td><span class="fn-rmb">{{sell.currencyType == 1000 ? '&yen;' : '$'}}{{sell.priceBase}}</span></td>
+                        <td>{{sell.billAmountSum}}</td>
+                        <td>{{sell.areaName}}</td>
+                        <td>{{sell.createTime | date:'MM-dd'}}</td>
+                        <td><a href="{{src}}" class="look">查看</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--自营商城-->
+<div class="record-box self-box layout">
+    <h2>自营商城</h2>
+    <div class="trade-tab J_tabBox">
+        <ul class="tab-nav J_tabNav">
+            <li ng-class="{'active': activeCategory == $index}" ng-repeat="category in categories track by $index" ng-click="changeCategory($index)">{{category.name}} <span></span></li>
+        </ul>
+        <div class="list-box J_tabCont">
+            <div class="focus fn-left">
+                <h4>聚贸化工  卖塑郎</h4>
+                <p><span>100%</span>保障  <span>100%</span>信赖</p>
+                <a href="tencent://message/?Menu=yes&amp;uin=938000730&amp;Service=58&amp;SigT=A7F6FEA02730C988FEE36DB64F785F3A54C7C09A17F3F5F7F5A0D99D31F40D9470345FCF0E8C3A82BE32D44DF0756F079DDD0E554461C89C35D952A64FD713E24C341194F8B7D9E0DA528CA2A6D855D640179D195E5B9158E19EA3A4B68F26539B3EE2CA9A0444109DE7D667D88A9137C84C533DCD79A0E6&amp;SigU=30E5D5233A443AB2451ABEFE35747B57210310B417786713F5F3140EF7C78F43BD4E8F59C00B559B52820290ADA979F49F46E524A229094BDEC889066DC050730608F3CC795C154D" class="ask-btn">我要咨询</a>
+            </div>
+            <div class="J_content">
+                <div class="pro-list" ng-repeat="sell in selfSellResult track by $index">
+                    <div class="list-detail-block">
+                        <div class="pro-img">
+                            <img src="/dist/img/pvc.jpg" alt="" ng-if="sell.cateName.indexOf('PV') > -1"/>
+                            <img src="/dist/img/ldpe.jpg" alt="" ng-if="sell.cateName.indexOf('PE') > -1"/>
+                            <img src="/dist/img/pp.jpg" alt="" ng-if="sell.cateName.indexOf('PP') > -1"/>
+                        </div>
+                        <div class="info">
+                            <h3>{{sell.goodsName}}</h3>
+                            <p class="factory">厂家：<span>{{sell.factory}}</span></p>
+                            <p class="date">交货时间：<span>{{sell.createTime | date:'yyyy-MM-dd'}}</span></p>
+                        </div>
+                        <p class="price">
+                            <span>价格</span>
+                            <span class="money">{{sell.currencyType == 1000 ? '&yen;' : '$'}}<em>{{sell.priceBase}}</em>/吨</span>
+                        </p>
+                        <a href="/SelfSell.do?action=querySelfSell&id={{sell.id}}#PZ#PP S2105" class="h-btn-white">立即抢购</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--热闹供应商-->
+<div class="record-box supply-box layout">
+    <h2>热门供应商</h2>
+    <ul class="trade-tab">
+        <li ng-repeat="provider in providerList track by $index" href="/provider/{{provider.id}}" ng-class="{'last-1': $index%8 == 0}"  title="{{provider.title}}"><img ng-src="{{webImageViewPath + provider.extLinkVendorImage}}" alt="{{provider.linkcompanyname}}"/></li>
+    </ul>
+</div>
+<!--市场动态-->
+<index-trends></index-trends>

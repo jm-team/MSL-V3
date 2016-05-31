@@ -1,0 +1,37 @@
+<div class="footer" ng-controller="FooterController" ng-hide="isShow">
+    <div class="footer-inner layout">
+        <div class="about-box" ng-repeat="lists in footerData">
+            <h3 ng-if="$index == 0">关于聚贸</h3>
+            <h3 ng-if="$index == 1">新手入门</h3>
+            <h3 ng-if="$index == 2">常见问题</h3>
+            <a href="/articles/msl-{{li.id}}.shtml" ng-repeat="li in lists track by $index">{{li.title}}</a>
+        </div>
+        
+        <div class="about-box contact-box">
+            <h3>联系我们</h3>
+            <ul>
+                <li>工作时间：（周一至周五9：00-17：00）</li>
+                <li>咨询热线：400-990-3311</li>
+                <li>传真号码：0571-87359367</li>
+                <li>电子邮箱：customer@jumore.com</li>
+            </ul>
+        </div>
+        <div class="attention-box">
+            <p>微信扫描二维码</p>
+            <p>或添加关注</p>
+            <img src="/dist/img/footer-code.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="footer-b">
+        <div class="footer-b-inner layout">
+            <p class="fn-left">COPYRIGHT © 卖塑郎 www.maisulang.com @2015 浙ICP备15006295号-1</p>
+            <p class="fn-right">
+                <span>聚贸旗下子平台：</span>
+                <a href="http://www.jumoore.com/" target="_blank">聚贸官网</a> |
+                <a href="http://www.jumore.com/" target="_blank">聚贸电商平台</a> |
+                <a href="http://www.maitonglang.com/" target="_blank">卖铜郎</a> |
+                <a href="http://www.jumoremedia.com/" target="_blank">聚贸传媒</a>
+            </p>
+        </div>
+    </div>
+</div>

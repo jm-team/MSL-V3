@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="mslApp">
+<head>
+    <meta charset="UTF-8">
+    <title>市场动态</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <base target="_blank"/>
+
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/public.css" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/css.css" type="text/css"/>
+    <script src="//cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.2.29/angular.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.2.29/angular-animate.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.2.29/angular-touch.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.2.29/angular-sanitize.js"></script>
+    <script src="//cdn.bootcss.com/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+    <script src="//cdn.bootcss.com/angular-i18n/1.2.29/angular-locale_zh-cn.min.js"></script>
+
+    <!--[if IE 8]>
+    <script src="../static/dep/ie8supports.js" type="text/javascript"></script><![endif]-->
+    <script src="../static/js/ng-controller.js"></script>
+    <script>
+        /*(function(){
+         var bp = document.createElement('script');
+         bp.src = 'http://www.maisulang.com/dsw/js/tracker.js?t=20160127';
+         var s = document.getElementsByTagName("script")[0];
+         s.parentNode.insertBefore(bp, s);
+         })();*/
+    </script>
+</head>
+<body class="box market-box">
+<div ng-include="'../tpl/common/header.html'"></div>
+<div class="main-cont layout">
+    <p class="bread">
+        <span>首页</span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<span>行情中心</span>
+    </p>
+
+    <div class="date-box">
+        <div class="date-input" ng-controller="DateController">
+            <span class="input-box"><input type="text" current-text="今天" clear-text="清除" close-text="关闭"
+                                           max-date="startMaxDate" datepicker-popup="{{format}}" class="Wdate input-txt"
+                                           ng-change="dateChange()" ng-model="$parent.startdate" is-open="opened1"
+                                           ng-click="open1($event)"/></span>
+            <span class="input-box"><input type="text" current-text="今天" clear-text="清除" close-text="关闭"
+                                           min-date="endMinDate" max-date="endMaxDate" datepicker-popup="{{format}}"
+                                           class="Wdate input-txt" ng-change="dateChange()" ng-model="$parent.enddate"
+                                           is-open="opened2" ng-click="open2($event)"/></span>
+        </div>
+        <div class="search-title">
+            <span class="fn-left">搜标题:</span>
+
+            <p class="fn-left">
+                <input type="text" class="input-txt" ng-model="keyword"/>
+                <button class="h-btn-area" ng-click="search()"></button>
+            </p>
+        </div>
+    </div>
+    <div class="main-l fn-left max-width">
+        <div class="block" ng-controller="NewsController">
+            <div class="line"><h3>行情报价</h3></div>
+            <div class="table-news table-border-t">
+                <table class="table">
+                    <tr>
+                        <th class="col01">标题</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr ng-repeat='item in newsitems' ng-class="$index % 2 != 0 ? '' : 'odd';">
+                        <td class="col01" ng-bind="item.title"></td>
+                        <td ng-bind="item.createTime | date:'shortDate'"></td>
+                        <td>
+                            <a href="/entry/state_list.html?id={{item.id}}">查看</a>
+                        </td>
+                    </tr>
+                </table>
+                <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+                <p class="count-num fn-right">共查询到<span>{{totalItems}}</span>条记录</p>
+            </div>
+        </div>
+        <div class="block" ng-controller="BottomImgNewsController">
+            <div class="line"><h3>行情资讯</h3></div>
+            <div class="block-detail" ng-repeat='item in imgnewsitems'>
+                <div class="img-box">
+                    <img src="{{item.img}}" alt=""/>
+                </div>
+                <div class="detail-txt">
+                    <h3><a href="">{{item.title}}</a></h3>
+                    <h6><p>{{item.tags}}</p><span>{{item.time}}</span></h6>
+                    <p>{{item.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部footer-->
+<div class="footer" ng-include="'../tpl/common/footer.html'"></div>
+</body>
+</html>

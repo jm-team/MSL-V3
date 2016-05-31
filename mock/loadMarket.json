@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Nymex WTI",
+    "lastNewPrice": "100",
+    "percent": "+100%",
+    "tendency": 0
+  },
+  {
+    "title": "asd",
+    "lastNewPrice": "100",
+    "percent": "-100%",
+    "tendency": 1
+  },
+  {
+    "title": "asd",
+    "lastNewPrice": "100",
+    "percent": "100%",
+    "tendency": 0
+  },
+  {
+    "title": "asd",
+    "lastNewPrice": "100",
+    "percent": "100%",
+    "tendency": 1
+  },
+  {
+    "title": "asd",
+    "lastNewPrice": "100",
+    "percent": "100%",
+    "tendency": 2
+  }
+]

@@ -1,0 +1,26 @@
+<form class="vip-login" ng-controller="LoginCtrl" style="height: auto;">
+    <h2>会员登录</h2>
+
+    <p><input type="text" class="input user" ng-model="username" placeholder="输入手机号"/></p>
+
+    <p><input type="password" class="input pwd" ng-model="passWord" placeholder="输入密码"/></p>
+
+    <p style=" position: relative;" ng-show="showcheck">
+        <input type="password" class="input check" ng-model="checkCode" placeholder="输入验证码" style="width:125px;"/>
+        <img src="/VerifyCode.do?action=init" class="verifyCode fn-left" id="VerifyCode"
+             onclick="this.src='/VerifyCode.do?action=init&t='+new Date().getTime()"
+             style="width: 80px;height: 36px; position: absolute; top: 0; right:0px;"/>
+    </p>
+
+    <div class="auto-login">
+        <label for="autoLogin" class="fn-left">
+            <input type="checkbox" id="autoLogin" name="autoLogin" ng-model="autoLogin" value="1">
+            <span>自动登录</span>
+        </label>
+        <a href="/pwd.do?action=findPwd" class="find-pwd">忘记密码？</a>
+    </div>
+    <button type="button" class="login-btn" ng-click="login()">立即登录</button>
+    <a href="/register.shtml" class="go-reg" style="margin-top:10px;">没有账号，立即注册</a>
+    <a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101218762&redirect_uri=http%3A%2F%2Fwww%2Emaisulang%2Ecom%2FqqCall%2Ejsp&state=1&scope=get_user_info,get_info"
+       class="qq-login">QQ登录</a>
+</form>

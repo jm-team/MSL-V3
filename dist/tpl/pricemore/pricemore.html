@@ -1,0 +1,52 @@
+<div class="main-cont layout" ng-controller="NewsController">
+    <p class="bread">
+        <span>首页</span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<span>行情中心</span>
+    </p>
+    <div class="date-box">
+        <div class="date-input" ng-controller="DateController">
+            <span class="input-box"><input type="text" current-text="今天" clear-text="清除" close-text="关闭"
+                                           max-date="startMaxDate" datepicker-popup="yyyy-MM-dd" class="Wdate input-txt"
+                                           ng-change="dateChange()" ng-model="$parent.startdate" is-open="opened1"
+                                           ng-click="open1($event)"/></span>
+            <span class="input-box"><input type="text" current-text="今天" clear-text="清除" close-text="关闭"
+                                           min-date="endMinDate" max-date="endMaxDate" datepicker-popup="yyyy-MM-dd"
+                                           class="Wdate input-txt" ng-change="dateChange()" ng-model="$parent.enddate"
+                                           is-open="opened2" ng-click="open2($event)"/></span>
+        </div>
+        <div class="search-title">
+            <span class="fn-left">搜标题:</span>
+
+            <p class="fn-left">
+                <input type="text" class="input-txt" ng-model="keyword"/>
+                <button class="h-btn-area" ng-click="search()"></button>
+            </p>
+        </div>
+    </div>
+    <div class="main-l fn-left">
+        <div class="block">
+            <div class="line"><h3>{{typename}}报价</h3></div>
+            <div class="table-news">
+                <table class="table">
+                    <tr>
+                        <th class="col01">类目</th>
+                        <th>标题</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr ng-repeat='item in newsitems' ng-class="$index % 2 != 0 ? '' : 'odd';">
+                        <td class="col01">{{typename}}</td>
+                        <td ng-bind="item.title"></td>
+                        <td ng-bind="item.createTime | date:'shortDate'"></td>
+                        <td>
+                            <a ui-sref="priceinfo({id:item.id})" href="" title="{{item.title}}">查看</a></td>
+                    </tr>
+                </table>
+                <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+                <p class="count-num fn-right">共查询到<span>{{totalItems}}</span>条记录</p>
+            </div>
+        </div>
+    </div>
+    <div class="main-r fn-right">
+        <price-publish></price-publish>
+    </div>
+</div>

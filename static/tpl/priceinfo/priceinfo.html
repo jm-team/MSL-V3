@@ -1,0 +1,37 @@
+<div class="main-cont layout" ng-controller="NewsDetailController">
+    <p class="bread">
+        <span>首页</span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<span>行情中心</span>
+    </p>
+    <div class="main-l fn-left">
+        <div class="block">
+            <div class="line"><h3>{{newsDetails.detail.name}}</h3></div>
+            <div class="block-detail">
+                <div class="title-li">
+                    <h3>{{newsDetails.detail.name}}</h3>
+                    <p class="title-time fn-right">{{newsDetails.detail.createTime | date:'shortDate'}}</p>
+                </div>
+                <div class="article-txt">
+                    <p class="ng-binding">
+                        <iframe height="500" width="838" style="border: 1px solid #ddd;" data_src="" src="" id="iframe"></iframe></p>
+                </div>
+                <div class="relative-read">
+                    <h6>相关阅读</h6>
+                    <div class="read-l fn-left">
+                        <a href="{{item.url}}" class="link-txt" ng-repeat="item in newsDetails.relative.list">
+                            <span>{{item.title}}</span>
+                            <em>{{item.createTime | date:'shortDate'}}</em>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-r fn-right">
+        <div class="block">
+            <h2>行情信息</h2>
+            <ul class="msg-ul">
+                <li ng-repeat="item in newsDetails.list"><a href="/entry/state_list.html?id={{li.id}}" title="{{item.title}}">{{item.title}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

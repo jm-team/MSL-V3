@@ -1,0 +1,50 @@
+[
+    {
+    	"category":"PE报价",
+    	"url": "news_list.html", 
+    	"img":"images/pp.jpg",
+    	"list":
+    		[
+    			{"id": 1, "title": "1日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 2, "title": "2日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 3, "title": "3日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 4, "title": "4日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 5, "title": "5日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 6, "title": "3日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 7, "title": "4日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 8, "title": "5日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"}
+    		]
+    },
+    {
+    	"category":"化工报价",
+    	"url": "state_list02.html", 
+    	"img":"images/pvc.jpg",
+    	"list":
+    		[
+    			{"id": 1, "title": "1日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 2, "title": "2日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 3, "title": "3日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 4, "title": "4日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 5, "title": "5日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 6, "title": "3日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 7, "title": "4日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 8, "title": "5日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"}
+    		]
+    },
+    {
+    	"category":"化工报价",
+    	"url": "news_list.html", 
+    	"img":"images/pvc.jpg",
+    	"list":
+    		[
+    			{"id": 1, "title": "1日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 2, "title": "2日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 3, "title": "3日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 4, "title": "4日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 5, "title": "5日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 6, "title": "3日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 7, "title": "4日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"},
+    			{"id": 8, "title": "5日本2月工业生产创五年最大降幅 市场担", "url": "state_list.html", "time": "2015.11.11"}
+    		]
+    }
+]

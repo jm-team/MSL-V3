@@ -1,0 +1,57 @@
+[
+  {
+    "cateName": "PV",
+    "goodsName": "HTA108",
+    "factory": "埃克森",
+    "priceBase": 6000,
+    "currencyType": 1000,
+    "billAmountSum": 123,
+    "areaName": "华北",
+    "createTime": "2016-5-16",
+    "id": 12
+  },
+  {
+    "cateName": "PP",
+    "goodsName": "HTA108",
+    "factory": "埃克森",
+    "priceBase": 1434.00,
+    "currencyType": 1000,
+    "billAmountSum": 123,
+    "areaName": "华北",
+    "createTime": "2016-5-16",
+    "id": 12
+  },
+  {
+    "cateName": "PE",
+    "goodsName": "HTA108",
+    "factory": "埃克森",
+    "priceBase": 10000,
+    "currencyType": 1000,
+    "billAmountSum": 123,
+    "areaName": "华北",
+    "createTime": "2016-5-16",
+    "id": 12
+  },
+  {
+    "cateName": "HDPE",
+    "goodsName": "HTA108",
+    "factory": "埃克森",
+    "priceBase": 123,
+    "currencyType": 1000,
+    "billAmountSum": 123,
+    "areaName": "华北",
+    "createTime": "2016-5-16",
+    "id": 12
+  },
+  {
+    "cateName": "HDPE",
+    "goodsName": "HTA108",
+    "factory": "埃克森",
+    "priceBase": 5345,
+    "currencyType": 1000,
+    "billAmountSum": 123,
+    "areaName": "华北",
+    "createTime": "2016-5-16",
+    "id": 12
+  }
+]

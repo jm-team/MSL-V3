@@ -1,0 +1,6 @@
+<div class="block" ng-controller="PublishController">
+    <div class="line"><h3>{{publishData.heading}}</h3></div>
+    <div class="block-detail">
+        <a href="{{item.url}}" ng-class="{'publish-btn': true, 'blue-btn': $index > 0}" ng-repeat="item in publishData.list">{{item.name}}</a>
+    </div>
+</div>

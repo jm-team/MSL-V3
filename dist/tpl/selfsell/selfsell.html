@@ -1,0 +1,87 @@
+<div class="layout" ng-controller="SelfSellCtrl">
+    <div class="classbox">
+        <div class="class-box">
+            <div class="class">
+                <dl class="">
+                    <dt class="">品种：</dt>
+                    <dd class="">
+                        <<span>全部</span>
+                        <<span onclick="editCate(this,'1007001')">高密度聚乙烯HDPE</span>
+                        <<span onclick="editCate(this,'1007002')">低密度聚乙烯LDPE</span>
+                        <<span onclick="editCate(this,'1007003')">线性聚乙烯LLDPE</span>
+                        <<span onclick="editCate(this,'1005')">聚丙烯PP</span>
+                        <<span onclick="editCate(this,'1006')">聚氯乙烯PVC</span>
+                    </dd>
+                    <dt class="">仓库：</dt>
+                    <dd class="">
+                        <<span>全部</span>
+                        <<span>宁波盛达库</span>
+                        <<span>上海德源库</span>
+                        <<span>宁波禾元库</span>
+                        <<span>宁波高新库</span>
+                        <<span>绍兴三圆库</span>
+                        <<span>宁波港务库</span>
+                        <<span>宝山昌荣库（杨宗路）</span>
+                        <<span>上海外高桥保税区</span>
+                        <<span>常州奔牛港务库</span>
+                        <<span>杭州库</span>
+                        <<span>宁波库</span>
+                        <<span>上海杨宗路库</span>
+                        <<span>国贸半山库</span>
+                        <<span>杭州八达库</span>
+                        <<span>宁波大众库</span>
+                        <<span>宁波双隆库</span>
+                        <<span>无锡铁路南站库</span>
+                        <<span>宁波骆驼仓</span>
+                        <<span>上海飞马非保税仓库</span>
+                        <<span>国贸钱江库</span>
+                        <<span>国贸嘉兴库</span>
+                        <<span>青岛恒顺丰库</span>
+                        <<span>临沂立晨库</span>
+                        <<span>平湖华瑞库</span>
+                        <<span>青州中储库</span>
+                        <<span>常州飞鸿库</span>
+                        <<span>台州南站库</span>
+                        <<span>天津全程库</span>
+                    </dd>
+                    <dt class="">更新时间：</dt>
+                    <dd class="">
+                        <<span>全部</span>
+                        <<span>10分钟内</span>
+                        <<span>30分钟内</span>
+                        <<span>1小时内</span>
+                        <<span>4小时内</span>
+                        <<span>1天内</span>
+                    </dd>
+                    <dt class="">类型：</dt>
+                    <dd class=" ">
+                        <<span>全部</span>
+                        <<span>期货</span>
+                        <<span>现货</span>
+                    </dd>
+                    <dt>牌号：</dt>
+                    <input type="text" value="" class=""/>
+                    <dt>厂家：</dt>
+                    <input type="text" value="" class=""/>
+                    <dt>仓库：</dt>
+                    <input type="text" value="" class=""/>
+                    <input type="button" value="搜索"/>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="tabCut">
+        <ul class="cutInner">
+            <li>更新时间</li>
+            <li>数量</li>
+            <li>价格</li>
+        </ul>
+        <div class="priceInter">
+            <div class="dataBtn">
+                <input type="button" value="清空" class="btn btn-white J-blank">
+                <input type="button" value="确定" class="btn btn-blue">
+            </div>
+            <input type="text" placeholder="最低价"> - <input type="text" placeholder="最高价">
+        </div>
+    </div>
+</div>

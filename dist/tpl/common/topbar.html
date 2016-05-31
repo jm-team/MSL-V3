@@ -1,0 +1,20 @@
+<div class="topbar" ng-controller="TopbarCtrl" ng-hide="isShow">
+    <div class="top layout">
+        <div class="top-l">
+            <span class="wel-home">欢迎来到聚贸化工卖塑郎</span>
+            <span ng-if="isLogin"><a class="header-login" href="/Welcome.do?action=init">{{adminBean.userAccountEntry.realName}}</a>
+            丨<a href="javascript:;" ng-click="loginOut()">退出</a></span>
+            <a href="/login.do?action=init" ng-if="!isLogin">请登录</a>
+            <a href="/register.shtml" ng-if="!isLogin">免费注册</a>
+        </div>
+        <div class="top-r">
+            <a href="/Welcome.do?action=init">会员中心</a>
+            <a href="/gifts.shtml">积分商城</a>
+            <!--<a href="/selfmallOrder.do?action=init">我的订单</a>-->
+            <!--<a href="/userMessage.do?action=init">消息中心</a>-->
+            <!--<a href="">帮助中心</a>-->
+            <!--<a href="">在线客服</a>-->
+            <span class="phone">400-990-3311<i>(8:30-17:30)</i></span>
+        </div>
+    </div>
+</div>
